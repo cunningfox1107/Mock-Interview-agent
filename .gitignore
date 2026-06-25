@@ -1,27 +1,7 @@
-# Environment variables
 .env
 .env.*
-
-# Python virtual environments
 menv/
 .menv/
 env/
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-
-# Jupyter
-.ipynb_checkpoints/
-
-# IDE files
 .vscode/
 .idea/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
