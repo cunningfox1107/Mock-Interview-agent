@@ -5,3 +5,4 @@ menv/
 env/
 .vscode/
 .idea/
+mock_interview_agent.db
