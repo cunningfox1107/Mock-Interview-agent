@@ -482,7 +482,7 @@ def render_interview_room():
             with st.container(border=True):
                 st.subheader("2. Question Settings")
                 
-                total_q = st.slider("Total Number of Questions", min_value=1, max_value=10, value=3)
+                total_q = st.number_input("Total Number of Questions", min_value=1, max_value=10, value=3, step=1)
                 
                 st.write("Difficulty Counts (Must add up to total questions):")
                 c1, c2, c3 = st.columns(3)
@@ -1066,10 +1066,10 @@ def render_mock_test_center():
                 difficulty = st.selectbox("Select Difficulty Level", diff_options, index=diff_index, key="test_diff_select")
                 
                 default_q_count = st.session_state.prev_test_q_count if st.session_state.prev_test_q_count else 20
-                q_count = st.slider("Select Question Count", min_value=15, max_value=60, value=int(default_q_count))
+                q_count = st.number_input("Select Question Count", min_value=15, max_value=60, value=int(default_q_count), step=1)
                 
                 default_duration = st.session_state.get("prev_test_duration", 30)
-                duration = st.slider("Select Test Duration (Minutes)", min_value=15, max_value=120, value=int(default_duration), step=5)
+                duration = st.number_input("Select Test Duration (Minutes)", min_value=15, max_value=120, value=int(default_duration), step=5)
                 
                 st.markdown("<br>", unsafe_allow_html=True)
                 if st.button("Generate Test Profile", type="primary", use_container_width=True):
@@ -1355,8 +1355,8 @@ def render_resume_round():
                 st.subheader("2. Round Configuration")
                 
                 res_difficulty = st.selectbox("Interview Difficulty Level", ["Easy", "Medium", "Hard"], index=1, key="res_diff")
-                time_limit = st.slider("Total Round Duration Limit (minutes)", min_value=15, max_value=45, value=25)
-                question_count = st.slider("Number of Questions to Ask", min_value=3, max_value=8, value=5)
+                time_limit = st.number_input("Total Round Duration Limit (minutes)", min_value=15, max_value=45, value=25, step=1)
+                question_count = st.number_input("Number of Questions to Ask", min_value=3, max_value=8, value=5, step=1)
                 
                 st.markdown("<br>", unsafe_allow_html=True)
                 start_disabled = (resume_file is None)
